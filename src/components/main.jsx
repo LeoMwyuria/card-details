@@ -10,12 +10,15 @@ function Main() {
   const [cardDetailsContent, setCardDetailsContent] = useState('');
 
   const handleCardNumberChange = (event) => {
-    let value = event.target.value.replace(/\s+/g, ''); 
-   
-    if (value.length > 16) {
-      value = value.slice(0, 16);
-    }
+    let value = event.target.value;
 
+    // Remove any non-numeric characters
+    value = value.replace(/\D/g, '');
+
+    // Limit to 16 characters
+    value = value.slice(0, 16);
+
+    // Format card number with spaces
     let formattedValue = '';
     for (let i = 0; i < value.length; i++) {
       if (i > 0 && i % 4 === 0) {
@@ -30,8 +33,15 @@ function Main() {
   const handleExpMonthChange = (event) => {
     let value = event.target.value;
 
-    if (value.length > 2) {
-      value = value.slice(0, 2);
+    // Remove any non-numeric characters
+    value = value.replace(/\D/g, '');
+
+    // Limit to 2 characters
+    value = value.slice(0, 2);
+
+    // Ensure the value is below 12
+    if (value > 12) {
+      value = '12';
     }
 
     setExpMonth(value);
@@ -39,6 +49,9 @@ function Main() {
 
   const handleExpYearChange = (event) => {
     let value = event.target.value;
+
+    // Remove any non-numeric characters
+    value = value.replace(/\D/g, '');
 
     if (value.length > 2) {
       value = value.slice(0, 2);
@@ -50,6 +63,9 @@ function Main() {
   const handleCvcChange = (event) => {
     let value = event.target.value;
 
+    // Remove any non-numeric characters
+    value = value.replace(/\D/g, '');
+
     if (value.length > 3) {
       value = value.slice(0, 3);
     }
@@ -59,6 +75,13 @@ function Main() {
 
   const handleCardHolderNameChange = (event) => {
     let value = event.target.value;
+    
+    // Allow only letters, spaces, and hyphens
+    value = value.replace(/[^a-zA-Z\s-]/g, '');
+
+    // Limit to 26 characters
+    value = value.slice(0, 26);
+
     setCardHolderName(value);
   };
   
@@ -101,13 +124,14 @@ function Main() {
             ) : (
               <React.Fragment>
                 <p className='p1'> CARDHOLDER NAME</p>
-                <input placeholder='e.g. Jane Appleseed' className='cardInput' type="text" onChange={handleCardHolderNameChange} value={cardHolderName} />
+                <input placeholder='e.g. Jane Appleseed' className='cardInput' type="text" onChange={handleCardHolderNameChange} value={cardHolderName} maxLength={26} />
                 <p className='p1'> CARD NUMBER</p>
                 <input placeholder='e.g. 1234 5678 9123 0000' className='cardInput' type="text" onChange={handleCardNumberChange} value={cardNumber} />
                 <div className='exp-cvc'>
                 <div className='expiration'>
                   <p>EXP. DATE (MM/YY)</p>
-                  <input placeholder=' MM' className='exp-date' type="text" onChange={handleExpMonthChange} value={expMonth} /> <input placeholder='  YY' className='exp-date' type="text" onChange={handleExpYearChange} value={expYear} />
+                  <input placeholder=' MM' className='exp-date' type="text" onChange={handleExpMonthChange} value={expMonth} />
+                  <input placeholder='  YY' className='exp-date' type="text" onChange={handleExpYearChange} value={expYear} />
                 </div>
                 <div className='cvc2'>
                   <p>CVC</p>
