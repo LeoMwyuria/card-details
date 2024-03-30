@@ -1,13 +1,304 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Space Grotesk';
+  background-color: rgb(207, 206, 206);
+  
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+.main{
+  
+  margin-left: auto;
+  margin-right: auto;
+  width: 375px;
+  height: 700px;
+  margin-top: 50px;
+  background-color: white;
+}
+.main-top{
+  width: 375px;
+height: 240px;
+background: #21092F;
+
+
+}
+.cards-div{
+  width: 343px;
+height: 251px;
+
+margin-left: auto;
+margin-right: auto;
+
+
+
+}
+.back-card{
+  position: relative;
+  z-index: 0;
+  width: 286px;
+height: 157px;
+background: white;
+
+left: 60px;
+top: 5px;
+border-radius: 7px;
+
+
+}
+.front-card{
+  position: relative;
+  z-index: 0;
+  width: 286px;
+height: 157px;
+background: linear-gradient(163.95deg, #6348FE 4.74%, #610595 88.83%);
+border-radius: 7px;
+
+bottom: 60px;
+padding: 5px;
+
+}
+.cvc{
+  background: rgba(173, 181, 190, 1);
+  width: 230.98px;
+  height: 29.74px;
+  border-radius: 8px;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 17px;
+  margin-bottom: auto;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  padding: 5px;
+ 
+font-size: 9px;
+font-weight: 500;
+
+
+
+  
+}
+.black-line{
+  background: rgba(47, 47, 47, 1);
+  width: 286px;
+  height: 34.6px;
+ position: relative;
+
+margin-top: 10px;
+ 
+  
+}
+.big-circle{
+  display: inline-block;
+  background-color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  
+}
+.small-circle{
+  display: inline-block;
+  border: 2px solid white;
+  width: 15px;
+  height: 15px;
+  border-radius: 100%;
+  margin-left: 8px;
+  margin-bottom: 7px;
+}
+.card-number{
+  color: white;
+  
+  margin-left: auto;
+margin-right: auto;
+
+font-size: 20px;
+font-weight: 500;
+text-align: center;
+
+
+width: 239px;
+height: 23px;
+
+
+
+}
+.name-date{
+  width: 245.11px;
+height: 12px;
+display: flex;
+justify-content: space-between;
+margin-left: auto;
+margin-right: auto;
+
+
+}
+.card-holder{
+  color: white;
+  
+font-size: 10px;
+font-weight: 500;
+
+
+}
+.exp-date1{
+  width: 45px;
+  height: 30px;
+font-size: 10px;
+font-weight: 500;
+
+
+
+}
+
+.exp-date2{
+  width: 45px;
+  height: 30px;
+  font-size: 10px;
+  font-weight: 500;
+  
+  
+  
+  }
+.p1{
+ color: rgba(33, 9, 47, 1);
+  
+
+  font-size: 14px;
+  font-weight: 500;
+
+  text-align: left;
+  margin-left: 18px;
+  
+}
+.cardInput{
+  width: 327px;
+height: 45px;
+margin-left: 18px;
+border-radius: 5px;
+
+
+
+}
+input{
+  outline: 0;
+  border-radius: 5px;
+}
+.card-details{
+  
+ height: 310px;
+}
+::-webkit-input-placeholder { 
+  font-size: 20px; 
+}
+.exp-date{
+  width: 45px;
+  height: 30px;
+}
+.expiration{
+  margin-left: 15px;
+  display: inline-block;
+  width: 180px;
+ 
+}
+.cvc2{
+  display: inline-block;
+  width: 180px;
+  height: 30px;
+  
+  
+}
+.cvc-input{
+  height: 30px;
+  width: 150px;
+
+}
+input{
+  border: 1px solid Light Grey;
+}
+.btn{
+  
+  width: 150px;
+  height: 50px;
+  border: 0px;
+  width: 327px;
+height: 53px;
+margin-left: 18px;
+background: rgba(33, 9, 47, 1);
+border-radius: 8px;
+color: white;
+font-size: 18px;
+
+}
+.btn:hover{
+  background: rgb(110, 32, 155);
+  cursor: pointer;
+}
+.exp-date{
+  
+}
+.exp-date1{
+  color: white;
+  font-size: 11px;
+}
+.thankyou{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: auto;
+
+}
+.ty{
+
+
+font-size: 28px;
+font-weight: 500;
+color: rgba(33, 9, 47, 1);
+width: 170px;
+
+
+
+}
+.thankyou-pic{
+  width: 100px;
+  height: 90px;
+
+}
+.exp-cvc{
+  width: 400px;
+ 
+}
+@media screen and (min-width:1200px){
+  .main{
+    width: 1200px;
+height: 900px;
+
+
+
+  }
+  .card-details{
+    position: relative;
+    left: 580px;
+    width: 400px;
+    bottom: 700px;
+    
+  }
+  .main-top{
+    height: 900px;
+  }
+  .back-card{
+    position: relative;
+    left: 200px;
+    top: 420px;
+    border: 1px solid rgb(116, 115, 115);
+  }
+  .front-card{
+    position: relative;
+    left: 150px;
+    top: 70px;
+  }
+  
 }
