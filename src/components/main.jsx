@@ -12,13 +12,13 @@ function Main() {
   const handleCardNumberChange = (event) => {
     let value = event.target.value;
 
-    // Remove any non-numeric characters
+   
     value = value.replace(/\D/g, '');
 
-    // Limit to 16 characters
+    
     value = value.slice(0, 16);
 
-    // Format card number with spaces
+   
     let formattedValue = '';
     for (let i = 0; i < value.length; i++) {
       if (i > 0 && i % 4 === 0) {
@@ -33,13 +33,13 @@ function Main() {
   const handleExpMonthChange = (event) => {
     let value = event.target.value;
 
-    // Remove any non-numeric characters
+    
     value = value.replace(/\D/g, '');
 
-    // Limit to 2 characters
+   
     value = value.slice(0, 2);
 
-    // Ensure the value is below 12
+   
     if (value > 12) {
       value = '12';
     }
@@ -50,7 +50,7 @@ function Main() {
   const handleExpYearChange = (event) => {
     let value = event.target.value;
 
-    // Remove any non-numeric characters
+   
     value = value.replace(/\D/g, '');
 
     if (value.length > 2) {
@@ -63,7 +63,6 @@ function Main() {
   const handleCvcChange = (event) => {
     let value = event.target.value;
 
-    // Remove any non-numeric characters
     value = value.replace(/\D/g, '');
 
     if (value.length > 3) {
@@ -76,10 +75,9 @@ function Main() {
   const handleCardHolderNameChange = (event) => {
     let value = event.target.value;
     
-    // Allow only letters, spaces, and hyphens
     value = value.replace(/[^a-zA-Z\s-]/g, '');
 
-    // Limit to 26 characters
+   
     value = value.slice(0, 26);
 
     setCardHolderName(value);
